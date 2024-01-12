@@ -19,8 +19,8 @@ function domi_teammember_cpt() {
                 'not_found'          => _x('Keine Teammember gefunden.', 'Not found', 'wptheme.smartfarming'),
                 'not_found_in_trash' => _x('Keine Teammember im Papierkorb gefunden.', 'Not found in trash', 'wptheme.smartfarming'),
             ),
-            'description'         => _x('Teammember Informationen', 'Description', 'wptheme.fgchilis'),
-            'supports'            => ['title', 'thumbnail', 'editor'],
+            'description'         => _x('Teammember Informationen', 'Description', 'wptheme.tsv-heitenried'),
+            'supports'            => ['title', 'thumbnail', 'editor', 'excerpt'],
             'hierarchical'        => false,
             'public'              => true,
             'show_ui'             => true,
@@ -30,10 +30,12 @@ function domi_teammember_cpt() {
             'can_export'          => true,
             'has_archive'         => false,
             'exclude_from_search' => true,
-            'publicly_queryable'  => false,
+            'publicly_queryable'  => true,
             'capability_type'     => 'post',
             'map_meta_cap'        => true,
-            'rewrite'             => false,
+            'rewrite'             => array(
+                                  'slug'    => 'vorstand'
+                        ),
             'menu_icon'           => 'dashicons-groups',
         )
     );
